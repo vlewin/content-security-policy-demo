@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src http://localhost:9966/ https://cdnjs.cloudflare.com;
+        child-src 'none';
+        object-src 'none'
+    ">
+
+    <title>Vue Validator Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
+
+  </head>
+  <body>
+    <h1>CSP Demo</h1>
+    <ol>
+      <li>npm i budo -g</li>
+      <li>cd content-security-policy-demo/handlebars</li>
+      <li>budo</li>
+      <li>http://localhost:9966/handlebars/index.html</li>
+      <li>Check dev console log</li>
+    </ol>
+
+    <result></result>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{title}}</h1>
+        <div class="body">
+          {{body}}
+        </div>
+      </div>
+    </script>
+
+    <script src="./inline.js"></script>
+
+
+  </body>
+</html>

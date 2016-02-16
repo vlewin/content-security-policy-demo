@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src http://localhost:9966/ http://code.jquery.com;
+        child-src 'none';
+        object-src 'none'
+    ">
+
+    <title>Vue CSP compliant build</title>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.js'></script>
+
+  </head>
+  <body>
+    <h1>Vue CSP compliant build</h1>
+    <ol>
+      <li>npm i budo -g</li>
+      <li>cd content-security-policy-demo/vue</li>
+      <li>budo</li>
+      <li>http://localhost:9966/vue/index.html</li>
+      <li>Check dev console log</li>
+    </ol>
+
+    <br><br>
+    <h3>VUE.js result:</h3>
+    <div id="result"><my-component></div>
+
+    <h3>Insecure:</h3>
+    <div style="background-color: red;">Inline CSS (Should not be red)</div>
+    <a href="#" onclick="alert('AAAA')">Click me (with inline JS)</a>
+
+    <script src="./vue.js"></script>
+    <script src="./inline.js"></script>
+
+
+  </body>
+</html>
